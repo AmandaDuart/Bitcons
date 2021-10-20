@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>amand</title>
+  </head>
+  <body>
+    <noscript>Amanda</noscript>
+    <div id="root"></div>
+    import React, {Component} from 'react';
+const {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend
+} from 'recharts';
+
+const data = [
+  {name: 'Page A', pv: 2400, amt: 2400},
+  {name: 'Page B', pv: 1398, amt: 2210},
+  {name: 'Page C', pv: 9800, amt: 2290},
+  {name: 'Page D', pv: 3908, amt: 2000},
+  {name: 'Page E', pv: 4800, amt: 2181},
+  {name: 'Page F', pv: 3800, amt: 2500},
+  {name: 'Page G', pv: 4300, amt: 2100},
+];
+
+class SimpleLineChart extends Component {
+  
+  render () {
+    return (
+      <LineChart
+        width={600}
+        height={300}
+        data={data}
+        margin={{top: 5, right: 30, left: 20, bottom: 5}}
+        >
+        <Line
+          type='monotone'
+          dataKey='pv'
+          stroke='#8884d8'
+          activeDot={{r: 8}}
+          />
+        <CartesianGrid strokeDasharray='3 3'/>
+        <Tooltip/>
+        <YAxis/>
+        <XAxis dataKey='name'/>
+        <Legend />
+      </LineChart>
+    );
+  }
+}
+
+export default SimpleLineChart;
+    -->
+  </body>
+</html>
