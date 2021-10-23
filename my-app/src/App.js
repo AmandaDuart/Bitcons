@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+    import React from 'react';
+    import './App.css';
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import Charts from'./pages/dashboard/charts.component.js';
+    import Search from'./pages/dashboard/search.component.js';
+    import Cardcomponent from'./pages/dashboard/card.component.js';
+    import { MdGridView } from "react-icons/md";
+    import { MdOutlineGridView} from "react-icons/md";
+    class App extends React.Component{
+      render() {
+        return (
+          <>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light marginNav">
+              <a className="navbar-brand" href="/" className='dashboard'> <MdGridView /> Dashboard</a>
+              <button className="navbar-toggler" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target="#navbarMenu" 
+                aria-controls="navbarMenu">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+             
+            </nav>
+            <Search/>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+            <Charts/>
+              <h5><MdOutlineGridView/>Empresas recentes</h5>
+            <Cardcomponent/>
+          </>
+        );
+      }
+    }  
+    export default App;
