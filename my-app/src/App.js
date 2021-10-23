@@ -6,8 +6,8 @@
     import Search from'./pages/dashboard/search.component.js';
     import Cardcomponent from'./pages/dashboard/card.component.js';
     import Menu from'./pages/dashboard/menu.component.js';
-    import Carrosel from'./pages/dashboard/lateralmenu.component.js';
-
+    import Lateral from'./pages/dashboard/lateralmenu.component.js';
+    import  Carousel from 'react-bootstrap/Carousel';
     import { MdOutlineGridView} from "react-icons/md";
     import chartsClient from '../src/api/client';
     import Navbar from './pages/dashboard/navbar.component.js';
@@ -37,7 +37,7 @@
                   <Col xs={12} md={9} sm={1} className='marginTitle ' >
                     <h5><MdOutlineGridView/>Empresas recentes</h5>
                   </Col>
-                  <Carrosel/>
+                  <Lateral/>
                 <Cardcomponent/>
               </Col>
 

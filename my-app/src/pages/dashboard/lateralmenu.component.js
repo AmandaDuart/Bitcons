@@ -1,17 +1,9 @@
 import React from 'react';
-import './App.css';
-import './pages/dashboard/style.css';
+import '../../App.css';
+import '../dashboard/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  Carousel from 'react-bootstrap/Carousel';
-import Charts from'./pages/dashboard/charts.component.js';
-import Search from'./pages/dashboard/search.component.js';
-import Cardcomponent from'./pages/dashboard/card.component.js';
-import Menu from'./pages/dashboard/menu.component.js';
-import { MdOutlineGridView} from "react-icons/md";
-import chartsClient from '../src/api/client';
-import Navbar from './pages/dashboard/navbar.component.js';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 
 class Lateral extends React.Component{
   render() {
