@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Area, AreaChart} from 'recharts';
-import chartsClient from '../../api/client';
+import {chartsClient} from '../../api/client'
 
 const data = [
   {
-    "name": "Page A",
+    "name": "10:00",
     "uv": 4000,
     "pv": 2400,
     "amt": 2400
   },
   {
-    "name": "Page B",
+    "name": "10:30",
     "uv": 3000,
     "pv": 1398,
     "amt": 2210
@@ -40,7 +40,7 @@ const data = [
     "amt": 2500
   },
   {
-    "name": "Page G",
+    "name": "18:00",
     "uv": 3490,
     "pv": 4300,
     "amt": 2100
@@ -48,7 +48,19 @@ const data = [
 ]
 
                             
-
+const chatsjS= ()=>{
+  setTimeout(() => {
+    console.log(chartsClient())
+    var temp = chartsClient()
+    data.push({
+      "name": "20:00",
+      "uv": temp,
+      "pv": 2400,
+      "amt": 2400
+    
+    })
+  }, 1000);
+};
     class SimpleLineChart extends Component {
       
       render () {
@@ -66,7 +78,7 @@ const data = [
             <YAxis />
             <CartesianGrid strokeDasharray="3 3" />
             <Tooltip />
-            <Area type="monotone" dataKey="uv" stroke="#0047BB75" fillOpacity={1} fill="url(#colorUv)" />
+            <Area onLoad= {chatsjS()} type="monotone" dataKey="uv" stroke="#0047BB75" fillOpacity={1} fill="url(#colorUv)" />
           </AreaChart>
         );
       }
